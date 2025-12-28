@@ -73,7 +73,7 @@ const config: Config = {
         },
         { to: '/search', label: 'Search', position: 'right' }, // Add search functionality
         {
-          href: 'https://github.com/GIAIC-Hakathon/physical-ai-book',
+          href: 'https://github.com/physical-ai-book',
           label: 'GitHub',
           position: 'right',
         },
@@ -113,7 +113,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/GIAIC-Hakathon/physical-ai-book',
+              href: 'https://github.com/physical-ai-book',
             },
           ],
         },
