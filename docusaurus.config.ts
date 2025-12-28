@@ -15,15 +15,11 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://giaic-hakathon.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: 'https://danishzohaib.github.io',
   baseUrl: '/physical-ai-book/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'GIAIC-Hakathon', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-book', // Usually your repo name.
+  organizationName: 'DanishZohaib',
+  projectName: 'physical-ai-book',
 
   onBrokenLinks: 'throw',
 
