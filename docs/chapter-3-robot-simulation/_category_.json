@@ -1,0 +1,8 @@
+{
+  "label": "Chapter 3: Robot simulation using Gazebo and Unity",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Simulation techniques using Gazebo and Unity for robot development."
+  }
+}

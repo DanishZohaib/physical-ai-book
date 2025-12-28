@@ -1,0 +1,89 @@
+# API Contract: Physical AI & Humanoid Robotics Textbook
+
+## Purpose
+This API contract defines potential future endpoints for interactive features that might be added to the textbook beyond the initial static content delivery.
+
+## Base URL
+```
+https://physical-ai-book.github.io/api/
+```
+
+## Endpoints
+
+### GET /chapters
+Retrieve a list of all available chapters in the textbook.
+
+**Response**:
+```json
+{
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "title": "Introduction to Physical AI and Embodied Intelligence",
+      "order": 1,
+      "learningOutcomes": [
+        "Understand the concept of embodied intelligence",
+        "Explain how AI operates in physical systems"
+      ],
+      "examples": ["Physical vs Virtual AI", "Embodied Cognition Examples"],
+      "prerequisites": []
+    }
+  ]
+}
+```
+
+### GET /chapters/{id}
+Retrieve detailed information about a specific chapter.
+
+**Path Parameters**:
+- id: string - The unique identifier of the chapter
+
+**Response**:
+```json
+{
+  "id": "chapter-1",
+  "title": "Introduction to Physical AI and Embodied Intelligence",
+  "content": "Markdown content of the chapter",
+  "learningOutcomes": [
+    "Understand the concept of embodied intelligence",
+    "Explain how AI operates in physical systems"
+  ],
+  "examples": [
+    {
+      "title": "Physical vs Virtual AI",
+      "description": "Comparison of AI in virtual vs physical environments"
+    }
+  ],
+  "prerequisites": [],
+  "nextChapter": "chapter-2"
+}
+```
+
+### GET /search
+Search across all textbook content.
+
+**Query Parameters**:
+- q: string - Search query
+- limit: integer (optional) - Maximum number of results (default: 10)
+
+**Response**:
+```json
+{
+  "results": [
+    {
+      "title": "Result title",
+      "contentPreview": "Preview of content",
+      "chapterId": "chapter-id",
+      "chapterTitle": "Chapter title",
+      "url": "/docs/chapter-id"
+    }
+  ]
+}
+```
+
+## Error Responses
+All endpoints follow standard HTTP status codes:
+- 200: Success
+- 400: Bad request
+- 404: Resource not found
+- 500: Internal server error

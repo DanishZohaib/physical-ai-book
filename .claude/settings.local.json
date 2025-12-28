@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch --all --prune)",
+      "Bash(powershell -ExecutionPolicy Bypass -File .specify/scripts/powershell/create-new-feature.ps1 -Json -Number 1 -ShortName \"textbook-physical-ai\" -FeatureDescription \"Create a technical textbook titled \"\"Physical AI & Humanoid Robotics\"\".\n\nPurpose:\nThis book teaches students how artificial intelligence operates in the physical world through humanoid robotics.\n\nAudience:\nUniversity students and professionals with basic AI and Python knowledge.\n\nBook Structure:\n- Introduction to Physical AI and Embodied Intelligence\n- ROS 2 fundamentals for humanoid robots\n- Robot simulation using Gazebo and Unity\n- NVIDIA Isaac Sim and Isaac ROS\n- Vision-Language-Action systems\n- Conversational humanoid robots\n- Capstone: Autonomous simulated humanoid robot\n\nRequirements:\n- Written as a Docusaurus documentation book\n- Each chapter should include explanations, examples, and learning outcomes\n- Use markdown files organized by chapters\n- No chatbot or RAG functionality in this phase\n- Content must align with the provided course outline\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File .specify/scripts/powershell/setup-plan.ps1 -Json)",
+      "Bash(powershell -ExecutionPolicy Bypass -File .specify/scripts/powershell/update-agent-context.ps1 -AgentType claude)",
+      "Bash(powershell -ExecutionPolicy Bypass -File .specify/scripts/powersaurus/check-prerequisites.ps1 -Json)",
+      "Bash(powershell -ExecutionPolicy Bypass -File .specify/scripts/powershell/check-prerequisites.ps1 -Json)",
+      "Bash(powershell -ExecutionPolicy Bypass -File .specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks)",
+      "Bash(git rev-parse --git-dir)",
+      "Bash(if test -d \"E:\\\\Python VSCode\\\\Hakathon\\\\GIAIC Hakathon\\\\physical-ai-book\\\\specs\\\\001-textbook-physical-ai\\\\checklists\")",
+      "Bash(then echo \"Checklists directory exists\")",
+      "Bash(else echo \"No checklists directory found\")",
+      "Bash(fi)",
+      "Bash(dir \"E:\\\\Python VSCode\\\\Hakathon\\\\GIAIC Hakathon\\\\physical-ai-book\\\\specs\\\\001-textbook-physical-ai\\\\checklists\" /B)",
+      "Bash(if test -d \"E:\\\\Python VSCode\\\\Hakathon\\\\GIAIC Hakathon\\\\physical-ai-book\\\\specs\\\\001-textbook-physical-ai\\\\contracts\")",
+      "Bash(then echo \"Contracts directory exists\")",
+      "Bash(else echo \"No contracts directory found\")",
+      "Bash(dir \"E:\\\\Python VSCode\\\\Hakathon\\\\GIAIC Hakathon\\\\physical-ai-book\\\\specs\\\\001-textbook-physical-ai\\\\contracts\" /B)",
+      "Bash(if [ -f \".gitignore\" ])",
+      "Bash(then echo \"gitignore exists\")",
+      "Bash(else echo \"gitignore does not exist\")",
+      "Bash(if [ -f \"package.json\" ])",
+      "Bash(then echo \"package.json exists, checking for other config files\")",
+      "Bash(else echo \"no package.json\")",
+      "Bash(ls -la docs/chapter-*/*.md)",
+      "Bash(npm run build)",
+      "Bash(findstr /n \"<60\")",
+      "Bash(ls -la docs/tutorial*)",
+      "Bash(npm run serve)",
+      "Skill(sp.phr)"
+    ]
+  }
+}

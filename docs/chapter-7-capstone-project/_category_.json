@@ -1,0 +1,8 @@
+{
+  "label": "Chapter 7: Capstone - Autonomous simulated humanoid robot",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Capstone project integrating all concepts learned in previous chapters."
+  }
+}

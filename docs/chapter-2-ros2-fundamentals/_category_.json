@@ -1,0 +1,8 @@
+{
+  "label": "Chapter 2: ROS 2 fundamentals for humanoid robots",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Fundamental concepts of ROS 2 and its application to humanoid robotics."
+  }
+}
