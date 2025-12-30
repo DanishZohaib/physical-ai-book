@@ -1,0 +1,124 @@
+{
+  "info": {
+    "_postman_id": "rag-chatbot-api-collection",
+    "name": "RAG Chatbot API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Start Chat Session",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"initial_context\": {\n    \"page\": \"chapter-1-introduction.md\",\n    \"user_agent\": \"postman\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/chat/start-session",
+          "host": ["{{base_url}}"],
+          "path": ["chat", "start-session"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Chat",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"What is a ROS 2 node?\",\n  \"page_context\": \"chapter-3-ros-fundamentals.md\",\n  \"selected_text\": \"A ROS 2 node is a process that performs computation.\",\n  \"session_id\": \"{{session_id}}\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/chat",
+          "host": ["{{base_url}}"],
+          "path": ["chat"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Index Document",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"document_id\": \"doc-intro-001\",\n  \"title\": \"Introduction to Physical AI\",\n  \"content\": \"Physical AI combines artificial intelligence with real-world robotics applications...\",\n  \"source_path\": \"intro.md\",\n  \"metadata\": {\n    \"tags\": [\"introduction\", \"overview\"],\n    \"chapter\": 1\n  }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/documents/index",
+          "host": ["{{base_url}}"],
+          "path": ["documents", "index"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Document",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/documents/{{document_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["documents", "{{document_id}}"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    }
+  ]
+}
